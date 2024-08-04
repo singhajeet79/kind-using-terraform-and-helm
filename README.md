@@ -26,7 +26,7 @@ data:\
       protocol: layer2\
       addresses:\
       - 172.26.255.200-172.26.255.250\
-EOF\
+EOF
 
 3- Apply configuration:\
 $ kaf metallb-configmap.yaml
