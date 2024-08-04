@@ -11,14 +11,14 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/confi
 ```
 
 **Configuration**\
-1- Get docker network CIDR, run
+1- Get docker network CIDR, run:
 ```
 docker network inspect -f '{{.IPAM.Config}}' kind
 ```
 2- Create the metallb-configmap.yaml
 ```
 cat <<EOF > metallb-configmap.yaml
-#Create a MetalLB config map (modify with your IP address range)
+# Create a MetalLB config map (modify with your IP address range)
 apiVersion: v1
 kind: ConfigMap
 metadata:
