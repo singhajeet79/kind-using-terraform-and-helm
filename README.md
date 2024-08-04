@@ -7,7 +7,7 @@
 4- To destroy the cluster:\
 ```terraform destroy -auto-approve```
 
-# Metallb installation
+## Metallb installation
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml
