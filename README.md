@@ -1,8 +1,10 @@
 # Create a Kind cluster using terraform 
 1- Clone repo \
-2- ```terraform init```
+2- 
+```terraform init```
 3- Run script - create-cluster.sh \
-4- ```terraform destroy -auto-approve```
+4- 
+```terraform destroy -auto-approve```
 
 # Metallb installation
 
