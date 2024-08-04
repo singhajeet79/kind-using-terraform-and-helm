@@ -11,11 +11,11 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/confi
 ```
 
 **Configuration**\
-1- Get docker network CIDR, run\
+1- Get docker network CIDR, run
 ```
 docker network inspect -f '{{.IPAM.Config}}' kind
 ```
-2- Create the metallb-configmap.yaml\
+2- Create the metallb-configmap.yaml
 ```
 cat <<EOF > metallb-configmap.yaml
 #Create a MetalLB config map (modify with your IP address range)
@@ -40,13 +40,13 @@ kaf metallb-configmap.yaml
 ```
 # Argocd installation
 ```
-kubectl create namespace argocd \
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml\
-kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'\
+kubectl create namespace argocd 
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"ports": [{"port": 443, "nodePort": 32000}]}}'
 ```
 # Get argocd password
 ```
-kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name\
+kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
