@@ -4,7 +4,7 @@
 ```terraform init```
 
 3- Run script - create-cluster.sh \
-4- 
+4- To destroy the cluster:\
 ```terraform destroy -auto-approve```
 
 # Metallb installation
