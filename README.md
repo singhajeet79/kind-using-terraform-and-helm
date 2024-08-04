@@ -5,11 +5,11 @@
 4- terraform destroy -auto-approve
 
 # Metallb installation
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml \
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml
 
 **Configuration**\
 1- Get docker network CIDR, run\
-docker network inspect -f '{{.IPAM.Config}}' kind\
+docker network inspect -f '{{.IPAM.Config}}' kind
 
 2- Create the metallb-configmap.yaml\
 cat <<EOF > metallb-configmap.yaml\
@@ -29,14 +29,14 @@ data:\
 EOF\
 
 3- Apply configuration:\
-$ kaf metallb-configmap.yaml\
+$ kaf metallb-configmap.yaml
 
 # Argocd installation
 kubectl create namespace argocd \
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml\
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'\
-kubectl patch svc argocd-server -n argocd -p '{"spec": {"ports": [{"port": 443, "nodePort": 32000}]}}'\
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"ports": [{"port": 443, "nodePort": 32000}]}}'
 
 # Get argocd password
 kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name\
-kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d\
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
