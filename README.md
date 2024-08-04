@@ -13,7 +13,8 @@
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml
 ```
 
-**Configuration**\\
+### Configuration
+
 1- Get docker network CIDR, run:
 ```
 docker network inspect -f '{{.IPAM.Config}}' kind
