@@ -5,7 +5,7 @@
 4- terraform destroy -auto-approve
 
 # Metallb installation
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml
+```kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml```
 
 **Configuration**\
 1- Get docker network CIDR, run\
