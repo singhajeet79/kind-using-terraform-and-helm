@@ -2,6 +2,7 @@
 1- Clone repo \
 2- 
 ```terraform init```
+
 3- Run script - create-cluster.sh \
 4- 
 ```terraform destroy -auto-approve```
