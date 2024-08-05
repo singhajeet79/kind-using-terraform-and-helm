@@ -1,9 +1,9 @@
 # Create a Kind cluster using terraform 
 1- Clone repo \
 2- 
-```terraform init```
-
-3- Run script - create-cluster.sh \
+```terraform init``` 
+```terraform plan```
+```terraform apply -auto-approve```
 4- To destroy the cluster:\
 ```terraform destroy -auto-approve```
 
